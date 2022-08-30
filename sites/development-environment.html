@@ -134,7 +134,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -184,7 +184,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -195,6 +195,22 @@
 <p>This chapter provides instructions on how to setup the recommended development environment for the MDS-Desktop project, as well as the technologies used.
 The MDS-Desktop app is built, on top of <a class="reference external" href="https://github.com/cawa-93/vite-electron-builder">vite-electron-builder</a> as an <a class="reference external" href="https://www.electronjs.org/">Electron</a> application which uses <a class="reference external" href="https://vuejs.org/">Vue.js</a> to render the ui and <a class="reference external" href="https://vitejs.dev/">Vite</a> to build the vue.js application.
 As an Electron app this application is built on top of <a class="reference external" href="https://nodejs.org/en/">Node.js</a> and uses the <a class="reference external" href="https://www.npmjs.com/">npm</a> package manager for dependency management and the build process.</p>
+<section id="setup-development-environment">
+<h2>Setup Development Environment<a class="headerlink" href="#setup-development-environment" title="Permalink to this headline">#</a></h2>
+<p>First you need to setup Node.js and npm if you haven’t already.
+To install both download and execute the <a class="reference external" href="https://nodejs.org/en/download/">Node.js Installer</a> or use a <a class="reference external" href="https://nodejs.org/en/download/package-manager/">package manager</a> for the installation, if available.</p>
+<p>Next if you just want to run the MDS-Desktop app you can clone the regular repository using:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/mobile-directing-system/mds-desktop.git
+</pre></div>
+</div>
+<p>If you want to contribute however, you need to create a fork of the regular repository and clone the fork instead.
+Finish setting up the app by changing into the root directory of the repository and run <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">i</span></code>.
+To run the app in dev mode with HMR for most parts of the app run <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">run</span> <span class="pre">watch</span></code>.
+Lasty to run the app in productiion mode with the statically compiled vue ui run <code class="docutils literal notranslate"><span class="pre">npm</span> <span class="pre">run</span> <span class="pre">prod</span></code>.</p>
+<p>You can use any Editor you like to work with the app but we strongly recommend <a class="reference external" href="https://code.visualstudio.com/">VSCode</a>.
+This editor enable comfortable development by providing a number of extensions that help with the developement.
+Recommended extensions for working on the app are <em>npm Intellisense</em>, <em>Vue Language Features</em>, <em>ESLint</em> and <em>Tailwind CSS IntelliSense</em>.</p>
+</section>
 </section>
 
         </article>
@@ -234,8 +250,27 @@ As an Electron app this application is built on top of <a class="reference exter
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Development Environment</a><ul>
+<li><a class="reference internal" href="#setup-development-environment">Setup Development Environment</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
