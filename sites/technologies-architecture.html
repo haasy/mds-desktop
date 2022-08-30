@@ -3,13 +3,13 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Development Environment" href="sites/development-environment.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="prev" title="Development Environment" href="development-environment.html" />
 
     <meta name="generator" content="sphinx-4.5.0, furo 2022.06.21"/>
-        <title>MDS Desktop documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+        <title>Technolgies &amp; Architecture - MDS Desktop documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
 
@@ -123,7 +123,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="#"><div class="brand">MDS Desktop  documentation</div></a>
+      <a href="../index.html"><div class="brand">MDS Desktop  documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -134,7 +134,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -143,21 +143,21 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
   
   
   <span class="sidebar-brand-text">MDS Desktop  documentation</span>
   
-</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
   <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="sites/development-environment.html">Development Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="sites/technologies-architecture.html">Technolgies &amp; Architecture</a></li>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="development-environment.html">Development Environment</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Technolgies &amp; Architecture</a></li>
 </ul>
 
 </div>
@@ -185,36 +185,39 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="welcome-to-mds-desktop-s-documentation">
-<h1>Welcome to MDS Desktop’s documentation!<a class="headerlink" href="#welcome-to-mds-desktop-s-documentation" title="Permalink to this headline">#</a></h1>
-<div class="toctree-wrapper compound">
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="sites/development-environment.html">Development Environment</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="sites/development-environment.html#setup-development-environment">Setup Development Environment</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="sites/technologies-architecture.html">Technolgies &amp; Architecture</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="sites/technologies-architecture.html#technologies">Technologies</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sites/technologies-architecture.html#architecture">Architecture</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sites/technologies-architecture.html#minimal-implementation-for-new-service">Minimal Implementation for new Service</a></li>
-</ul>
-</li>
-</ul>
-</div>
+          <section id="technolgies-architecture">
+<h1>Technolgies &amp; Architecture<a class="headerlink" href="#technolgies-architecture" title="Permalink to this headline">#</a></h1>
+<section id="technologies">
+<h2>Technologies<a class="headerlink" href="#technologies" title="Permalink to this headline">#</a></h2>
+<p>For this <a class="reference external" href="https://www.electronjs.org/">Electron</a> app we use <a class="reference external" href="https://vuejs.org/">Vue.js</a> as the web framework with <a class="reference external" href="https://tailwindcss.com/">tailwindcss</a> and <a class="reference external" href="https://flowbite.com/">Flowbite</a> as the UI framework and the logic is writtin in Typescript.
+For routing we use <a class="reference external" href="https://router.vuejs.org/">vue-router</a>.
+For state management of the UI we use <a class="reference external" href="https://vuex.vuejs.org/">vuex</a> with the <a class="reference external" href="https://www.npmjs.com/package/vuex-smart-module">vuex-smart-module</a> to have TypeScript support.
+We use <a class="reference external" href="https://lodash.com/">Lodash</a> as a utitlity library in the frontend.
+The vue app the UI uses <a class="reference external" href="https://vitejs.dev/">Vite</a> for building and bundling.
+The communication with the backend is implemented using <a class="reference external" href="https://axios-http.com/">Axios</a>.</p>
 </section>
-<section id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">#</a></h1>
-<ul class="simple">
-<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
-<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></p></li>
-</ul>
+<section id="architecture">
+<h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="minimal-implementation-for-new-service">
+<h2>Minimal Implementation for new Service<a class="headerlink" href="#minimal-implementation-for-new-service" title="Permalink to this headline">#</a></h2>
+<p>To implement a minimal service for a new entity (e.g. User, Group, etc.) start with implementing the calls to the backend API using Axios in
+<em>main/src/backend</em>.
+Once these are implemented export them in the <em>main/src/backend/index.ts</em> file and use them to write a handler-wrapper in <em>main/src/ipcHandlers</em>.
+Export these handlers in the <em>main/src/ipcHandlers/index.ts</em>.
+Register these handlers in ipcMain in <em>main/src/index.ts</em> and give them speaking names.
+Use those names, make sure that those names are <strong>exactly</strong> the same as the ones given to them when registering them, write a wrapper for calling them in <em>preload/src</em>.
+Export those wrappers in <em>preload/src/index.ts</em>.
+<strong>Important</strong> There is a bug with the auto-export plugin that requires you to export each wrapper function sperately on a new line.
+If this is not done the vue code can’t findthe preload module.
+Lastly implement a seperate vuex module to manage the state of the retrieved entities. Use the preload wrapper functions to fetch data from the backend.</p>
+</section>
 </section>
 
         </article>
@@ -222,16 +225,18 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="sites/development-environment.html">
+          
+          <a class="prev-page" href="development-environment.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
-                  <span>Next</span>
+                  <span>Previous</span>
                 </div>
+                
                 <div class="title">Development Environment</div>
+                
               </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
@@ -252,16 +257,37 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Technolgies &amp; Architecture</a><ul>
+<li><a class="reference internal" href="#technologies">Technologies</a></li>
+<li><a class="reference internal" href="#architecture">Architecture</a></li>
+<li><a class="reference internal" href="#minimal-implementation-for-new-service">Minimal Implementation for new Service</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
   </div>
-</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/scripts/furo.js"></script>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
     </body>
 </html>
