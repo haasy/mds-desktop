@@ -4,12 +4,14 @@ Welcome to MDS Desktop's documentation!
 =======================================
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 3
     :caption: Contents:
 
     sites/development-environment
     sites/technologies-architecture
     sites/manual
+    sites/component-documentation
+    sites/ui-customization
 
 
 Indices and tables
