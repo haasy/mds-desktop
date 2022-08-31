@@ -213,7 +213,14 @@ The communication with the backend is implemented using <a class="reference exte
 <li><p>Start with implementing the calls to the backend API using Axios in <em>main/src/backend</em>. Once implemented export them in the <em>main/src/backend/index.ts</em> file.</p></li>
 <li><p>Use them to write a handler-wrapper in <em>main/src/ipcHandlers</em>. Export these handlers in the <em>main/src/ipcHandlers/index.ts</em>.</p></li>
 <li><p>Register these handlers in ipcMain in <em>main/src/index.ts</em> and give them speaking names.</p></li>
-<li><p>Use those names, make sure that those names are <strong>exactly</strong> the same as the ones given to them when registering them, write a wrapper for calling them in <em>preload/src</em>. Export those wrappers in <em>preload/src/index.ts</em>. <strong>Important</strong> There is a bug with the auto-export plugin that requires you to export each wrapper function sperately on a new line. If this is not done the vue code can’t find the preload module.</p></li>
+</ol>
+<blockquote>
+<div><div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Use those names, make sure that those names are <strong>exactly</strong> the same as the ones given to them when registering them, write a wrapper for calling them in <em>preload/src</em>. Export those wrappers in <em>preload/src/index.ts</em>. <strong>Important</strong> There is a bug with the auto-export plugin that requires you to export each wrapper function sperately on a new line. If this is not done the vue code can’t find the preload module.</p>
+</div>
+</div></blockquote>
+<ol class="arabic simple">
 <li><p>Lastly implement a seperate vuex module to manage the state of the retrieved entities. Use the preload wrapper functions to fetch data from the backend.</p></li>
 </ol>
 </section>
