@@ -216,7 +216,7 @@ The communication with the backend is implemented using <a class="reference exte
 <li><p>Write a wrapper functions for calling those ipcHandlers in <em>preload/src</em> and export them in <em>preload/src/index.ts</em>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>make sure that the names used for calling the ipcHandlers are <strong>exactly</strong> the same as the ones given to them when registering them. <strong>Important</strong> There is a bug with the auto-export plugin that requires you to export each wrapper function sperately on a new line. If this is not done the vue code can’t find the preload module.</p>
+<p>Make sure that the names used for calling the ipcHandlers are <strong>exactly</strong> the same as the ones given to them when registering them. <strong>Important</strong> There is a bug with the auto-export plugin that requires you to export each wrapper function sperately on a new line. If this is not done the vue code can’t find the preload module.</p>
 </div>
 </li>
 <li><p>Lastly implement a seperate vuex module to manage the state of the retrieved entities. Use the preload wrapper functions to fetch data from the backend.</p></li>
