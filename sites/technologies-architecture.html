@@ -205,6 +205,30 @@ The communication with the backend is implemented using <a class="reference exte
 <section id="architecture">
 <h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">#</a></h2>
 <a class="reference internal image-reference" href="../_images/mds-desktop-architecture.svg"><img alt="MDS-Desktop Architecture Diagram" src="../_images/mds-desktop-architecture.svg" width="600" /></a>
+<p>As an Electron app the MDS-Desktop app is split into three parts.
+The first is the Website which defines the UI, for which we use a web app developed in vue.
+The second is the Preload Module which defines what Node.js functionality is usable from the web app.
+Here we use is mainly to expose wrapper functions around the IPC calls to the Node.js part of the app.
+Lastly there is the Node.js part. This part starts &amp; configures the browser windows to display the web app and implements other functionality not available to JS in the browser such as access to the files on the computer.</p>
+<p>The Vue UI app is split between the router, views, components and the vuex state.
+The app is sturctured by using the router to route between different views.
+These views themselves are made up of components, HTML and Typescript.
+Those components them are made up similary to the view, but in contrast to the views they are supposed to be usable at multiple points in the application.
+We decide on which functionality to put into a component based on if it is going to be reused or not.
+The data which is displayed by the UI is taken from vuex which we use to manage the state of our app.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Both views and components are written in the <em>SFC</em> format using Vue3 with the Composition API. We also use Typescript and the <cite>&lt;script setup&gt;</cite> tag for our code. When ever possible try to use those technolgies and make sure that when browsing the <a class="reference external" href="https://vuejs.org/guide/introduction.html">Vue.js Documentation</a> you have the toggle at the top of the sidebar set to Composition API.</p>
+</div>
+<p>To get started with Vue.js take a look at the <a class="reference external" href="https://vuejs.org/guide/introduction.html">Vue.js Documentation</a>.
+For an introduction to the vue-router visit the <a class="reference external" href="https://router.vuejs.org/guide/">vue-router Guide</a>.
+To get a general understanding of vuex you can orient yourself at the <a class="reference external" href="https://vuex.vuejs.org/guide/">vuex Guide</a>.
+But we use the vuex-smart-module to gain TypeScript support for vuex and used the README in the <a class="reference external" href="https://github.com/ktsn/vuex-smart-module">vuex-smart-module Github</a> orient ourself when writing our vuex module.</p>
+<p>The Preload Module is mostly autmated and only conists of wrapper functions to expose the IPC calls to the vue app.
+But here it is <strong>Important</strong> to note that the auto-export plugin currently is bugged and needs all of the functions you want to export to be on a seperate line and in a seperate export statement.
+If this is not done the vue app will not be able to find the preload module.</p>
+<p>We use the Node.js part mostly to implement the skaffolding of the app (e.g. start browser window with the web app and hide window bar, implement exit window function, etc.) and the IPC, Handler and client-side implementation of the MDS-Server HTTP API.
+To Familiarize youself with Electron you can use the <a class="reference external" href="https://www.electronjs.org/docs/latest">Electron Introduction</a>.</p>
 </section>
 <section id="minimal-implementation-for-new-service">
 <h2>Minimal Implementation for new Service<a class="headerlink" href="#minimal-implementation-for-new-service" title="Permalink to this headline">#</a></h2>
