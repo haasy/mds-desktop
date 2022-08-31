@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="User Manual" href="manual.html" /><link rel="prev" title="Development Environment" href="development-environment.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="prev" title="Technolgies &amp; Architecture" href="technologies-architecture.html" />
 
     <meta name="generator" content="sphinx-4.5.0, furo 2022.06.21"/>
-        <title>Technolgies &amp; Architecture - MDS Desktop documentation</title>
+        <title>User Manual - MDS Desktop documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
@@ -157,8 +157,8 @@
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="development-environment.html">Development Environment</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Technolgies &amp; Architecture</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manual.html">User Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technologies-architecture.html">Technolgies &amp; Architecture</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">User Manual</a></li>
 </ul>
 
 </div>
@@ -192,61 +192,16 @@
           </label>
         </div>
         <article role="main">
-          <section id="technolgies-architecture">
-<h1>Technolgies &amp; Architecture<a class="headerlink" href="#technolgies-architecture" title="Permalink to this headline">#</a></h1>
-<p>This chapter covers used technologies, theirs docs, if necessary how they are used and the architecture of the MDS-Desktop app.</p>
-<section id="technologies">
-<h2>Technologies<a class="headerlink" href="#technologies" title="Permalink to this headline">#</a></h2>
-<p>For this <a class="reference external" href="https://www.electronjs.org/">Electron</a> app we use <a class="reference external" href="https://vuejs.org/">Vue.js</a> as the web framework with <a class="reference external" href="https://tailwindcss.com/">tailwindcss</a> and <a class="reference external" href="https://flowbite.com/">Flowbite</a> as the UI framework and the logic is writtin in Typescript.
-For routing we use <a class="reference external" href="https://router.vuejs.org/">vue-router</a>.
-For state management of the UI we use <a class="reference external" href="https://vuex.vuejs.org/">vuex</a> with the <a class="reference external" href="https://www.npmjs.com/package/vuex-smart-module">vuex-smart-module</a> to have TypeScript support.
-We use <a class="reference external" href="https://lodash.com/">Lodash</a> as a utitlity library in the frontend.
-The vue app the UI uses <a class="reference external" href="https://vitejs.dev/">Vite</a> for building and bundling.
-The communication with the backend is implemented using <a class="reference external" href="https://axios-http.com/">Axios</a>.</p>
+          <section id="user-manual">
+<h1>User Manual<a class="headerlink" href="#user-manual" title="Permalink to this headline">#</a></h1>
+<p>This chapter covers how to use the MDS-Desktop App as an Enduser.</p>
+<section id="resource-management">
+<h2>Resource Management<a class="headerlink" href="#resource-management" title="Permalink to this headline">#</a></h2>
+<p>Here we show how to use the app to create different kinds of Resources in the Backend.
+These include Users, Groups, Operations.</p>
+<section id="users">
+<h3>Users<a class="headerlink" href="#users" title="Permalink to this headline">#</a></h3>
 </section>
-<section id="architecture">
-<h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">#</a></h2>
-<a class="reference internal image-reference" href="../_images/mds-desktop-architecture.svg"><img alt="MDS-Desktop Architecture Diagram" src="../_images/mds-desktop-architecture.svg" width="600" /></a>
-<p>As an Electron app the MDS-Desktop app is split into three parts.
-The first is the Website which defines the UI, for which we use a web app developed in vue.
-The second is the Preload Module which defines what Node.js functionality is usable from the web app.
-Here we use is mainly to expose wrapper functions around the IPC calls to the Node.js part of the app.
-Lastly there is the Node.js part. This part starts &amp; configures the browser windows to display the web app and implements other functionality not available to JS in the browser such as access to the files on the computer.</p>
-<p>The Vue UI app is split between the router, views, components and the vuex state.
-The app is structured by using the router to route between different views.
-These views themselves are made up of components, HTML and Typescript.
-Those components them are made up similary to the view, but in contrast to the views they are supposed to be usable at multiple points in the application.
-We decide on which functionality to put into a component based on if it is going to be reused or not.
-The data which is displayed by the UI is taken from vuex which we use to manage the state of our app.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Both views and components are written in the <em>SFC</em> format using Vue3 with the Composition API. We also use Typescript and the <cite>&lt;script setup&gt;</cite> tag for our code. When ever possible try to use those technolgies and make sure that when browsing the <a class="reference external" href="https://vuejs.org/guide/introduction.html">Vue.js Documentation</a> you have the toggle at the top of the sidebar set to Composition API.</p>
-</div>
-<p>To get started with Vue.js take a look at the <a class="reference external" href="https://vuejs.org/guide/introduction.html">Vue.js Documentation</a>.
-For an introduction to the vue-router visit the <a class="reference external" href="https://router.vuejs.org/guide/">vue-router Guide</a>.
-To get a general understanding of vuex you can orient yourself at the <a class="reference external" href="https://vuex.vuejs.org/guide/">vuex Guide</a>.
-But we use the vuex-smart-module to gain TypeScript support for vuex and used the README in the <a class="reference external" href="https://github.com/ktsn/vuex-smart-module">vuex-smart-module Github</a> orient ourself when writing our vuex module.</p>
-<p>The Preload Module is mostly autmated and only conists of wrapper functions to expose the IPC calls to the vue app.
-But here it is <strong>Important</strong> to note that the auto-export plugin currently is bugged and needs all of the functions you want to export to be on a seperate line and in a seperate export statement.
-If this is not done the vue app will not be able to find the preload module.</p>
-<p>We use the Node.js part mostly to implement the skaffolding of the app (e.g. start browser window with the web app and hide window bar, implement exit window function, etc.) and the IPC, Handler and client-side implementation of the MDS-Server HTTP API.
-To Familiarize youself with Electron you can use the <a class="reference external" href="https://www.electronjs.org/docs/latest">Electron Introduction</a>.</p>
-</section>
-<section id="minimal-implementation-for-new-service">
-<h2>Minimal Implementation for new Service<a class="headerlink" href="#minimal-implementation-for-new-service" title="Permalink to this headline">#</a></h2>
-<p>To implement a minimal service for a new entity (e.g. User, Group, etc.) do the following:</p>
-<ol class="arabic">
-<li><p>Start with implementing the calls to the backend API using Axios in <em>main/src/backend</em>. Once implemented export them in the <em>main/src/backend/index.ts</em> file.</p></li>
-<li><p>Use them to write a handler-wrapper in <em>main/src/ipcHandlers</em>. Export these handlers in the <em>main/src/ipcHandlers/index.ts</em>.</p></li>
-<li><p>Register these handlers in ipcMain in <em>main/src/index.ts</em> and give them speaking names.</p></li>
-<li><p>Write a wrapper functions for calling those ipcHandlers in <em>preload/src</em> and export them in <em>preload/src/index.ts</em>.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Make sure that the names used for calling the ipcHandlers are <strong>exactly</strong> the same as the ones given to them when registering them. <strong>Important</strong> There is a bug with the auto-export plugin that requires you to export each wrapper function sperately on a new line. If this is not done the vue code can’t find the preload module.</p>
-</div>
-</li>
-<li><p>Lastly implement a seperate vuex module to manage the state of the retrieved entities. Use the preload wrapper functions to fetch data from the backend.</p></li>
-</ol>
 </section>
 </section>
 
@@ -255,23 +210,15 @@ To Familiarize youself with Electron you can use the <a class="reference externa
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="manual.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">User Manual</div>
-              </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="development-environment.html">
+          
+          <a class="prev-page" href="technologies-architecture.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Development Environment</div>
+                <div class="title">Technolgies &amp; Architecture</div>
                 
               </div>
             </a>
@@ -307,10 +254,11 @@ To Familiarize youself with Electron you can use the <a class="reference externa
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Technolgies &amp; Architecture</a><ul>
-<li><a class="reference internal" href="#technologies">Technologies</a></li>
-<li><a class="reference internal" href="#architecture">Architecture</a></li>
-<li><a class="reference internal" href="#minimal-implementation-for-new-service">Minimal Implementation for new Service</a></li>
+<li><a class="reference internal" href="#">User Manual</a><ul>
+<li><a class="reference internal" href="#resource-management">Resource Management</a><ul>
+<li><a class="reference internal" href="#users">Users</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
