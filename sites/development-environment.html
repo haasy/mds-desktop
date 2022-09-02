@@ -258,6 +258,78 @@ To Familiarize youself with Electron you can use the <a class="reference externa
 </section>
 <section id="directory-structure-of-the-project">
 <h3>Directory Structure of the Project<a class="headerlink" href="#directory-structure-of-the-project" title="Permalink to this headline">#</a></h3>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>docs/                       <span class="c1"># All the documentation, both vuepress and sphinx</span>
+Makefile                    <span class="c1"># Makefile to build the sphinx documentation (run make in</span>
+                            <span class="c1"># project root)</span>
+node_modules                <span class="c1"># Contains the downloaded node packages/modules (don&#39;t touch)</span>
+package.json                <span class="c1"># Conatins node.js configuration, e.g. entry point into the app,</span>
+                            <span class="c1"># dependecies, scripts (what can be run with npm run [command])</span>
+packages/                   <span class="c1"># Contains the source code of the app and configuration specific</span>
+                            <span class="c1"># to the different parts of the app</span>
+postcss.config.js           <span class="c1"># Part of the TailwindCSS configuration. Concerns only the</span>
+                            <span class="c1"># renderer part of the app. Is here for build compatibility</span>
+                            <span class="c1"># purposes with the production build. Must be the same as the</span>
+                            <span class="c1"># packages/renderer/postcss.config.js file</span>
+README.md                   <span class="c1"># Main README of the project. Mostly points to the sphinx</span>
+                            <span class="c1"># documentation</span>
+scripts/                    <span class="c1"># contains mostly watch.js to support HMR with vite and electron</span>
+tailwind.config.js          <span class="c1"># Main TailwindCSS configuration. Concerns only the renderer</span>
+                            <span class="c1"># part of the app. Is here for build compatibility purposes</span>
+                            <span class="c1"># with the production build. Must be the same as the</span>
+                            <span class="c1"># packages/renderer/tailwind.config.js file</span>
+tests/                      <span class="c1"># Contains E2E tests</span>
+vitest.config.js            <span class="c1"># Configuration for the vitest testing framework</span>
+docs/make.bat               <span class="c1"># Build the sphinx documentation on windows (run make.bat)</span>
+docs/images                 <span class="c1"># Contains the images used in the sphinx documentation</span>
+docs/index.rst              <span class="c1"># Entry point into the sphinx documentation (toctree)</span>
+docs/conf.py                <span class="c1"># Configuration for the sphinx documentation contains</span>
+                            <span class="c1"># the definition of external links among other things</span>
+docs/sites                  <span class="c1"># Contains the chapters of the sphinx documentation</span>
+docs/_build                 <span class="c1"># Contains the built sphinx documentation in HTML files</span>
+docs/README.md              <span class="c1"># Entry point into the vupress documentation</span>
+docs/.vuepress              <span class="c1"># Contains configuration and build products of the vuepress</span>
+                            <span class="c1"># documentation</span>
+docs/.vuepress/config.ts    <span class="c1"># Configuration of vuepress (mainly instruct vuepress to use</span>
+                            <span class="c1"># vite as the bundler)</span>
+packages/main/              <span class="c1"># All code and configs specific to the main node.js part of</span>
+                            <span class="c1"># the electron app</span>
+packages/preload/           <span class="c1"># All code and configs specific to the preload module (mostly</span>
+                            <span class="c1"># wrappers and auto-generated)</span>
+packages/renderer/          <span class="c1"># All code and configs specific to the renderer part (UI) of</span>
+                            <span class="c1"># the electron app</span>
+packages/types/             <span class="c1"># Contains the types for entities (e.g. Users, Groups, etc.)</span>
+                            <span class="c1"># Used in all three parts of the app</span>
+packages/*/vite.config.js   <span class="c1"># Configuration for Vite for all three different parts</span>
+packages/*/tsconfig.json    <span class="c1"># Configuration for the Typescript compiler for all three</span>
+                            <span class="c1"># different parts</span>
+packages/*/src/             <span class="c1"># Source code for the three different parts</span>
+packages/*/dist/            <span class="c1"># Build products for the three different parts</span>
+packages/main/src/backend       <span class="c1"># Code for the communication with the MDS-Server HTTP</span>
+                                <span class="c1"># API including e.g. the caching of the Auth Cookie</span>
+packages/main/src/config        <span class="c1"># Rudimentary config file</span>
+packages/main/src/index.ts      <span class="c1"># Main entry point into the whole app. Starts the Windows,</span>
+                                <span class="c1"># registers the ipc handlers, etc.</span>
+packages/main/src/ipcHandlers   <span class="c1"># Implementation of ipcHandler wrappers for the backend</span>
+                                <span class="c1"># comms functions</span>
+packages/main/src/windows       <span class="c1"># Contains the code for the different windows</span>
+packages/renderer/index.css             <span class="c1"># Main CSS for the whole UI</span>
+packages/renderer/index.html            <span class="c1"># Main Page for the SPA UI vue app</span>
+packages/renderer/postcss.config.js     <span class="c1"># See postcss.config.js above</span>
+packages/renderer/tailwind.config.js    <span class="c1"># See tailwind.config.js above</span>
+packages/renderer/src/App.vue           <span class="c1"># Main Vue file.</span>
+packages/renderer/components/           <span class="c1"># Contains resuable vue components</span>
+packages/renderer/constants/            <span class="c1"># Contains constants such as permissions strings</span>
+packages/renderer/src/index.ts          <span class="c1"># Main logic entry point into the vue app.</span>
+                                        <span class="c1"># Starts the whole vue app.</span>
+packages/renderer/src/router/           <span class="c1"># Contains the definition and configuration of</span>
+                                        <span class="c1"># the vue-router</span>
+packages/renderer/src/store/            <span class="c1"># Contains all the code related to the</span>
+                                        <span class="c1"># implementation and configuration of the</span>
+                                        <span class="c1"># vuex store &amp; vuex modules</span>
+packages/renderer/src/views/            <span class="c1"># contains the pages routed through with the</span>
+                                        <span class="c1"># router</span>
+</pre></div>
+</div>
 </section>
 <section id="minimal-implementation-for-new-service">
 <h3>Minimal Implementation for new Service<a class="headerlink" href="#minimal-implementation-for-new-service" title="Permalink to this headline">#</a></h3>
@@ -283,8 +355,16 @@ To Familiarize youself with Electron you can use the <a class="reference externa
 </section>
 <section id="component-documentation">
 <h2>Component Documentation<a class="headerlink" href="#component-documentation" title="Permalink to this headline">#</a></h2>
-<p>Documentation for the components themselves (in <cite>packages/renderer/src/components</cite>) can be found either as code comments in the components themselves or in the form of a <a class="reference external" href="https://vuepress.vuejs.org/">VuePress</a> documentation.
-The vuepress documentation is written in markdown files in <cite>docs/README.md</cite> and <cite>docs/md/*</cite>. To serve the documentation use the <cite>npm run docs:dev</cite> command in the project root. If you want a statically built HTML version run <cite>npm run docs:build</cite> in the project root.</p>
+<p>Documentation for the components themselves (in <em>packages/renderer/src/components</em>) can be found either as code comments in the components themselves or in the form of a <a class="reference external" href="https://vuepress.vuejs.org/">VuePress</a> documentation.
+The vuepress documentation is written in markdown files in <em>docs/README.md</em> and <em>docs/md/*</em>. To serve the documentation use the</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>npm run docs:dev
+</pre></div>
+</div>
+<p>command in the project root. If you want a statically built HTML version run</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>npm run docs:build
+</pre></div>
+</div>
+<p>in the project root.</p>
 <p>The vue components are documented with a general description of their use and particularities, as well as a list of their slots, events and props.</p>
 </section>
 <section id="ui-customization">
