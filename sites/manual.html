@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Component Documentation" href="component-documentation.html" /><link rel="prev" title="Technolgies &amp; Architecture" href="technologies-architecture.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="prev" title="Development" href="development-environment.html" />
 
     <meta name="generator" content="sphinx-4.5.0, furo 2022.06.21"/>
         <title>User Manual - MDS Desktop documentation</title>
@@ -156,11 +156,8 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="development-environment.html">Development Environment</a></li>
-<li class="toctree-l1"><a class="reference internal" href="technologies-architecture.html">Technolgies &amp; Architecture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="development-environment.html">Development</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">User Manual</a></li>
-<li class="toctree-l1"><a class="reference internal" href="component-documentation.html">Component Documentation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ui-customization.html">UI-Customization</a></li>
 </ul>
 
 </div>
@@ -200,11 +197,51 @@
 <section id="resource-management">
 <h2>Resource Management<a class="headerlink" href="#resource-management" title="Permalink to this headline">#</a></h2>
 <p>Here we show how to use the app to create different kinds of Resources in the Backend.
-These include Users, Groups, Operations.</p>
+These include users, groups, operations.</p>
 <section id="users">
 <h3>Users<a class="headerlink" href="#users" title="Permalink to this headline">#</a></h3>
-<p>In the app Users can be created, changed and deleted.
-To create a User</p>
+<p>In the app users can be created, changed and deleted.
+To manage the users navigate to the users page by clicking of the Users link (<strong>1</strong>) in the sidebar.
+Be aware only users with the <em>user.view</em> permission are able click this link.</p>
+<a class="reference internal image-reference" href="../_images/main_screen_users.png"><img alt="Navigate to the users page" src="../_images/main_screen_users.png" style="width: 600px;" /></a>
+<p>This will open the users page with a paginated table with all the users.</p>
+<a class="reference internal image-reference" href="../_images/all_users_pagination_buttons_screen.png"><img alt="Navigate to the users page" src="../_images/all_users_pagination_buttons_screen.png" style="width: 600px;" /></a>
+<p>Here you can click through pages of users using the next button (<strong>1</strong>) and previous button (<strong>2</strong>).
+If the button become greyed out this means that there is not corresponding previous or next page.
+The number of pages and the number of current page are displayed between the two pagination buttons.</p>
+<section id="creating-users">
+<h4>Creating Users<a class="headerlink" href="#creating-users" title="Permalink to this headline">#</a></h4>
+<p>To create users first click the <em>+</em> button (<strong>1</strong>) on the users page on top of the paginated table.
+Be aware only users with the <em>user.create</em> permission will be able to click this button.</p>
+<a class="reference internal image-reference" href="../_images/all_users_create_button_screen.png"><img alt="Create user button" src="../_images/all_users_create_button_screen.png" style="width: 600px;" /></a>
+<p>This opens the user creation form.
+Here you need to fill in the necessary fields in theuser creation form (<strong>1</strong>).
+These are the username, first name, last name and password.
+After filling in this form click on the Create User button (<strong>2</strong>) to create a user with the provided data.
+If you want to cancel the user creation and return to the users page click the Cancel button (<strong>3</strong>).</p>
+<a class="reference internal image-reference" href="../_images/create_user_marked.png"><img alt="Create User Form" src="../_images/create_user_marked.png" style="width: 600px;" /></a>
+</section>
+<section id="editing-deleting-users">
+<h4>Editing &amp; Deleting Users<a class="headerlink" href="#editing-deleting-users" title="Permalink to this headline">#</a></h4>
+<p>To edit or delete users click on the user you want to change or delete in the paginated table.</p>
+<a class="reference internal image-reference" href="../_images/edit_user_marked.png"><img alt="Create User Form" src="../_images/edit_user_marked.png" style="width: 600px;" /></a>
+<p>This opens the user update form.
+Here you can change the username, first name and last name of a user in the update user form (<strong>1</strong>).
+To submit the user changes click the Change User button (<strong>2</strong>).
+Be aware only users with the <em>user.update</em> permission can update users.
+If you want to delete the user click on the Delete User button (<strong>3</strong>).
+Be aware only users with the <em>user.delete</em> permission can delete users.
+If you want to don’t want to change the user and want to return to the users page click the Cancel button (<strong>4</strong>).</p>
+</section>
+</section>
+<section id="operations">
+<h3>Operations<a class="headerlink" href="#operations" title="Permalink to this headline">#</a></h3>
+<p>In the app operations can be created and updated, but <strong>not</strong> deleted.
+Instead of being deleted operations can be set to <em>archived</em>.
+To manage operations click on the operations link in the sidebar (<strong>1</strong>).
+Be aware only users with the <em>operation.view.any</em> permission can click this link.</p>
+<a class="reference internal image-reference" href="../_images/main_screen_operations.png"><img alt="Navigate to the users page" src="../_images/main_screen_operations.png" style="width: 600px;" /></a>
+<p>This will open the operations page with a paginated table with all operations.</p>
 </section>
 </section>
 </section>
@@ -214,23 +251,15 @@ To create a User</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="component-documentation.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">Component Documentation</div>
-              </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="technologies-architecture.html">
+          
+          <a class="prev-page" href="development-environment.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Technolgies &amp; Architecture</div>
+                <div class="title">Development</div>
                 
               </div>
             </a>
@@ -268,7 +297,12 @@ To create a User</p>
             <ul>
 <li><a class="reference internal" href="#">User Manual</a><ul>
 <li><a class="reference internal" href="#resource-management">Resource Management</a><ul>
-<li><a class="reference internal" href="#users">Users</a></li>
+<li><a class="reference internal" href="#users">Users</a><ul>
+<li><a class="reference internal" href="#creating-users">Creating Users</a></li>
+<li><a class="reference internal" href="#editing-deleting-users">Editing &amp; Deleting Users</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#operations">Operations</a></li>
 </ul>
 </li>
 </ul>
