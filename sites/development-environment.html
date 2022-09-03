@@ -369,8 +369,40 @@ The vuepress documentation is written in markdown files in <em>docs/README.md</e
 </section>
 <section id="ui-customization">
 <h2>UI-Customization<a class="headerlink" href="#ui-customization" title="Permalink to this headline">#</a></h2>
+<p>As for customization of the standard TailwindCSS, we chose to only adapt the colors.</p>
 <section id="custom-colors">
 <h3>Custom Colors<a class="headerlink" href="#custom-colors" title="Permalink to this headline">#</a></h3>
+<p>For the implementation of our custom color theme we oriented ourselves at <a class="reference external" href="https://tailwindcss.com/docs/customizing-colors">TailwindCSS Customizing Colors</a>.
+As such the color definitions can be found in the either of the <em>tailwind.config.js</em> files.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you want to change of extend the custom color theme please be aware that <strong>both</strong> <em>tailwind.config.js</em> files need to be changes for the changes to be reflected in the dev and production modes.</p>
+</div>
+<p>We chose to implement 6 different colors:</p>
+<ul class="simple">
+<li><p>primary: The primary color for e.g. normal buttons or other primary UI elements</p></li>
+<li><p>secondary: The secondary color for e.g. highlights etc or other secondary UI elements</p></li>
+<li><p>warning: The warning color for things the user should perceive more than the standard UI, but is not an error</p></li>
+<li><p>error: The error color displayed when e.g. an error occurs or form fields are not filled correctly</p></li>
+<li><p>surface: The color for e.g. form fields to be more recognizable on the background or for delimiter</p></li>
+<li><p>background: The color for the background</p></li>
+</ul>
+<p>Each of those colors as five different hues, except the background color:</p>
+<ul class="simple">
+<li><p>superlight</p></li>
+<li><p>light</p></li>
+<li><p>-</p></li>
+<li><p>dark</p></li>
+<li><p>superdark</p></li>
+</ul>
+<p>Those must can be combinied with the colors using an <em>_</em> to choose a color, e.g. <em>primary_superlight</em> is the superlight hue of the primary color.
+If no hue is provides the normal middleground color is chosen.
+The combinations themselves are taken from the default TailwindCSS color palatte, so they are a subset of this palatte.</p>
+<p>Each of these color and hue combinations also has a <em>on_</em> color for text to be displayed readably on it.
+E.g. for text on the background color it would be the color <em>on_background</em> or for text on the primary_superlight color <em>on_primary_superlight</em></p>
+<p>These colors can be combined with TailwindCSS designators such as <em>text</em> for text color or <em>bg</em> for background color.
+The colors are appended to those designators using a <em>-</em>, so when the primary color is wanted as a background color it is <em>bg-primary</em> with
+<em>text-on_primary</em> as the text color for it to be readable.</p>
 </section>
 </section>
 </section>
