@@ -289,6 +289,7 @@ docs/_build                 <span class="c1"># Contains the built sphinx documen
 docs/README.md              <span class="c1"># Entry point into the vupress documentation</span>
 docs/.vuepress              <span class="c1"># Contains configuration and build products of the vuepress</span>
                             <span class="c1"># documentation</span>
+docs/component-docs         <span class="c1"># Vuepress markdown documentation files</span>
 docs/.vuepress/config.ts    <span class="c1"># Configuration of vuepress (mainly instruct vuepress to use</span>
                             <span class="c1"># vite as the bundler)</span>
 packages/main/              <span class="c1"># All code and configs specific to the main node.js part of</span>
@@ -356,7 +357,7 @@ packages/renderer/src/views/            <span class="c1"># contains the pages ro
 <section id="component-documentation">
 <h2>Component Documentation<a class="headerlink" href="#component-documentation" title="Permalink to this headline">#</a></h2>
 <p>Documentation for the components themselves (in <em>packages/renderer/src/components</em>) can be found either as code comments in the components themselves or in the form of a <a class="reference external" href="https://vuepress.vuejs.org/">VuePress</a> documentation.
-The vuepress documentation is written in markdown files in <em>docs/README.md</em> and <em>docs/md/*</em>. To serve the documentation use the</p>
+The vuepress documentation is written in markdown files in <em>docs/README.md</em> and <em>docs/component-docs/*</em>. To serve the documentation use the</p>
 <div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>npm run docs:dev
 </pre></div>
 </div>
